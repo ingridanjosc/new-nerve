@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
-import desktopBg from "@/assets/desktop-bg.png.asset.json";
-import mobileBg from "@/assets/mobile-bg.png.asset.json";
+import desktopBg from "@/assets/desktop-bg.png";
+import mobileBg from "@/assets/mobile-bg.png";
 
 const OFFER_URL =
   "https://secure.nervefresh.com/index-nf-ds#aff=ingridcalazans2007";
@@ -48,15 +48,15 @@ function Pressel() {
       <h1 className="sr-only">Nerve Fresh</h1>
 
       <div
-        className="absolute inset-0 bg-top bg-no-repeat bg-cover md:hidden"
-        style={{ backgroundImage: `url(${mobileBg.url})` }}
+        className="absolute inset-0 bg-cover bg-top bg-no-repeat md:hidden"
+        style={{ backgroundImage: `url("${mobileBg}")` }}
         role="img"
         aria-label="Nerve Fresh"
       />
 
       <div
-        className="absolute inset-0 hidden bg-top bg-no-repeat bg-cover md:block"
-        style={{ backgroundImage: `url(${desktopBg.url})` }}
+        className="absolute inset-0 hidden bg-cover bg-top bg-no-repeat md:block"
+        style={{ backgroundImage: `url("${desktopBg}")` }}
         role="img"
         aria-label="Nerve Fresh"
       />
@@ -91,10 +91,9 @@ function Pressel() {
           </div>
 
           <p className="mt-5 text-[15px] leading-relaxed text-card-foreground/80">
-            We use cookies and similar technologies to help personalize
-            content, tailor and measure ads, and provide a better experience.
-            By clicking accept, you agree to this, as outlined in our Cookie
-            Policy.
+            We use cookies and similar technologies to help personalize content,
+            tailor and measure ads, and provide a better experience. By clicking
+            accept, you agree to this, as outlined in our Cookie Policy.
           </p>
 
           <div className="mt-7 grid grid-cols-1 gap-4 sm:grid-cols-2">
