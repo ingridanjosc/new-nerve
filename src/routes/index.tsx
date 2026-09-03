@@ -1,28 +1,41 @@
 import { createFileRoute } from "@tanstack/react-router";
-import desktopBg from "@/assets/desktop-bg.png.asset.json";
-import mobileBg from "@/assets/mobile-bg.png.asset.json";
+import desktopBg from "@/assets/desktop-bg.png";
+import mobileBg from "@/assets/mobile-bg.png";
 
-const OFFER_URL = "https://secure.nervefresh.com/index-nf-ds#aff=ingridcalazans2007";
+const OFFER_URL =
+  "https://secure.nervefresh.com/index-nf-ds#aff=ingridcalazans2007";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Nerve Fresh — Alívio Natural para Dores nos Nervos" },
+      {
+        title: "Nerve Fresh — Alívio Natural para Dores nos Nervos",
+      },
       {
         name: "description",
         content:
           "Fórmula com 5 ingredientes naturais clinicamente estudados para queimação, formigamento e dormência. Garantia de 180 dias.",
       },
-      { property: "og:title", content: "Nerve Fresh — Alívio Natural para Dores nos Nervos" },
+      {
+        property: "og:title",
+        content: "Nerve Fresh — Alívio Natural para Dores nos Nervos",
+      },
       {
         property: "og:description",
         content:
           "Fórmula com 5 ingredientes naturais clinicamente estudados. Garantia de 180 dias.",
       },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
+      {
+        property: "og:type",
+        content: "website",
+      },
+      {
+        name: "twitter:card",
+        content: "summary_large_image",
+      },
     ],
   }),
+
   component: Pressel,
 });
 
@@ -36,14 +49,15 @@ function Pressel() {
       <h1 className="sr-only">Nerve Fresh</h1>
 
       <div
-        className="absolute inset-0 bg-top bg-no-repeat bg-cover md:hidden"
-        style={{ backgroundImage: `url(${mobileBg.url})` }}
+        className="absolute inset-0 bg-cover bg-top bg-no-repeat md:hidden"
+        style={{ backgroundImage: `url(${mobileBg})` }}
         role="img"
         aria-label="Nerve Fresh"
       />
+
       <div
-        className="absolute inset-0 hidden bg-top bg-no-repeat bg-cover md:block"
-        style={{ backgroundImage: `url(${desktopBg.url})` }}
+        className="absolute inset-0 hidden bg-cover bg-top bg-no-repeat md:block"
+        style={{ backgroundImage: `url(${desktopBg})` }}
         role="img"
         aria-label="Nerve Fresh"
       />
@@ -56,22 +70,31 @@ function Pressel() {
             <h2 className="text-2xl font-extrabold tracking-tight text-card-foreground sm:text-3xl">
               Cookies Settings
             </h2>
+
             <button
               type="button"
               onClick={go}
               aria-label="Fechar"
               className="text-card-foreground/70 transition-colors hover:text-card-foreground"
             >
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+              <svg
+                width="26"
+                height="26"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+              >
                 <path d="M18 6 6 18M6 6l12 12" />
               </svg>
             </button>
           </div>
 
           <p className="mt-5 text-[15px] leading-relaxed text-card-foreground/80">
-            We use cookies and similar technologies to help personalize content, tailor and measure
-            ads, and provide a better experience. By clicking accept, you agree to this, as outlined
-            in our Cookie Policy.
+            We use cookies and similar technologies to help personalize content,
+            tailor and measure ads, and provide a better experience. By clicking
+            accept, you agree to this, as outlined in our Cookie Policy.
           </p>
 
           <div className="mt-7 grid grid-cols-1 gap-4 sm:grid-cols-2">
@@ -82,6 +105,7 @@ function Pressel() {
             >
               Accept
             </button>
+
             <button
               type="button"
               onClick={go}
