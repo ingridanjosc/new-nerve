@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
-import desktopBg from "@/assets/desktop-bg.png";
-import mobileBg from "@/assets/mobile-bg.png";
+import desktopBg from "@/assets/desktop-bg.png.asset.json";
+import mobileBg from "@/assets/mobile-bg.png.asset.json";
 
 const OFFER_URL =
   "https://secure.nervefresh.com/index-nf-ds#aff=ingridcalazans2007";
@@ -9,21 +9,21 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       {
-        title: "Nerve Fresh — Alívio Natural para Dores nos Nervos",
+        title: "Nerve Fresh — Natural Relief for Nerve Pain",
       },
       {
         name: "description",
         content:
-          "Fórmula com 5 ingredientes naturais clinicamente estudados para queimação, formigamento e dormência. Garantia de 180 dias.",
+          "A natural formula with 5 clinically studied ingredients for burning, tingling, and numbness. Includes a 180-day money-back guarantee.",
       },
       {
         property: "og:title",
-        content: "Nerve Fresh — Alívio Natural para Dores nos Nervos",
+        content: "Nerve Fresh — Natural Relief for Nerve Pain",
       },
       {
         property: "og:description",
         content:
-          "Fórmula com 5 ingredientes naturais clinicamente estudados. Garantia de 180 dias.",
+          "A natural formula with 5 clinically studied ingredients. Includes a 180-day money-back guarantee.",
       },
       {
         property: "og:type",
@@ -35,7 +35,6 @@ export const Route = createFileRoute("/")({
       },
     ],
   }),
-
   component: Pressel,
 });
 
@@ -49,15 +48,15 @@ function Pressel() {
       <h1 className="sr-only">Nerve Fresh</h1>
 
       <div
-        className="absolute inset-0 bg-cover bg-top bg-no-repeat md:hidden"
-        style={{ backgroundImage: `url(${mobileBg})` }}
+        className="absolute inset-0 bg-top bg-no-repeat bg-cover md:hidden"
+        style={{ backgroundImage: `url(${mobileBg.url})` }}
         role="img"
         aria-label="Nerve Fresh"
       />
 
       <div
-        className="absolute inset-0 hidden bg-cover bg-top bg-no-repeat md:block"
-        style={{ backgroundImage: `url(${desktopBg})` }}
+        className="absolute inset-0 hidden bg-top bg-no-repeat bg-cover md:block"
+        style={{ backgroundImage: `url(${desktopBg.url})` }}
         role="img"
         aria-label="Nerve Fresh"
       />
@@ -68,13 +67,13 @@ function Pressel() {
         <div className="w-full max-w-xl rounded-2xl bg-card p-7 shadow-2xl sm:p-9">
           <div className="flex items-start justify-between gap-4">
             <h2 className="text-2xl font-extrabold tracking-tight text-card-foreground sm:text-3xl">
-              Cookies Settings
+              Cookie Settings
             </h2>
 
             <button
               type="button"
               onClick={go}
-              aria-label="Fechar"
+              aria-label="Close"
               className="text-card-foreground/70 transition-colors hover:text-card-foreground"
             >
               <svg
@@ -92,9 +91,10 @@ function Pressel() {
           </div>
 
           <p className="mt-5 text-[15px] leading-relaxed text-card-foreground/80">
-            We use cookies and similar technologies to help personalize content,
-            tailor and measure ads, and provide a better experience. By clicking
-            accept, you agree to this, as outlined in our Cookie Policy.
+            We use cookies and similar technologies to help personalize
+            content, tailor and measure ads, and provide a better experience.
+            By clicking accept, you agree to this, as outlined in our Cookie
+            Policy.
           </p>
 
           <div className="mt-7 grid grid-cols-1 gap-4 sm:grid-cols-2">
