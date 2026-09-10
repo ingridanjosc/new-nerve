@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://zuvoray.site/sitemap.xml
+Sitemap: https://zuvoray.site/nervefresh/sitemap.xml
